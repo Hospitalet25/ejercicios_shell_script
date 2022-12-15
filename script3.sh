@@ -1,10 +1,14 @@
 #!/bin/bash
-if [[ $# -ne 2 ]]; then
-	echo "Se deben proporcionar 2 parametros"
-	echo "Este se pone asi : "./script3.sh "parametro" "parametro"""
+if [[ -e $1 ]]; then
+	echo "El objeto existe existe"
+		if [[ -d $1 ]]; then
+			echo "Es un directorio"
+		elif [[ -f $1 ]]; then 
+			echo "Es un archivo regular"
+		fi
+	
+else 
+	echo "No existe"
 fi
-op1=$1
-op2=$2
-z=$(echo $op1 + $op2 | bc );
-	echo $z
+
 	
